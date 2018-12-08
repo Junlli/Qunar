@@ -16,7 +16,12 @@
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  methods: {
+    refresh () {
+      this.$router.go(0)
+    }
+  }
 }
 </script>
 

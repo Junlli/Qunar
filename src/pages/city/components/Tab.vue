@@ -1,8 +1,8 @@
 <template>
   <div class="city-tab">
     <ul class="tab-list">
-      <li :class="{'active': !isActive, 'in': true}" @click="handleClick" key='in'>境内</li>
-      <li :class="{'active': isActive, 'out': true}" @click='handleClick' key='out'>境外·港澳台</li>
+      <li :class="{'active': inActive, 'in': true}" @click="activeClick" key='in'>境内</li>
+      <li :class="{'active': outActive, 'out': true}" @click='foreignClick' key='out'>境外·港澳台</li>
     </ul>
   </div>
   
@@ -13,12 +13,20 @@ export default {
   name: 'CityTab',
   data () {
     return {
-      isActive: false,
+      inActive: true,
+      outActive: false
     }
   },
   methods: {
-    handleClick () {
-      this.isActive = !this.isActive
+    activeClick () {
+      this.inActive = true
+      this.outActive = false
+      this.$emit('in', this.inActive)
+    },
+    foreignClick () {
+      this.inActive = false
+      this.outActive = true
+      this.$emit('out', this.inActive)
     }
   }
 }

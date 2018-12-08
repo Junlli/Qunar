@@ -1,10 +1,15 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-tab></city-tab>
+    <city-tab
+      @in='handleChangeIn'
+      @out='handleChangeOut'
+    >
+    </city-tab>
     <city-list
       :cities='cities'
       :hotCities='hotCities'
+      :data='dataIn'
     >
     </city-list>
   </div>
@@ -25,7 +30,9 @@ export default {
   data () {
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      dataIn: '',
+      dataOut: ''
     }
   },
   methods: {
@@ -40,17 +47,16 @@ export default {
         this.cities = data.cities
         this.hotCities = data.hotCities
       }
+    },
+    handleChangeIn (data) {
+      this.dataIn = data
+    },
+    handleChangeOut (data) {
+      this.dataIn = data
     }
   },
   mounted () {
     this.getCityInfo()
-  },
-  beforeCreate () {
-    document.querySelector('body').setAttribute('style', 'background:#f5f5f5;height:100%')
-    // document.querySelector('body').setAttribute('style', 'height:100%')
-  },
-  beforeDestroy () {
-    document.querySelector('body').setAttribute('style', '')
   }
 }
 </script>
