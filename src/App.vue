@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <keep-alive>
+    <div id="app">
+      <router-view/>
+    </div>
+  </keep-alive>
 </template>
 <style lang="stylus">
 

@@ -3,6 +3,7 @@ function resolve (dir) {
   return path.join(__dirname, dir)
 }
 const mockIndexData = require('./mock/index.json')
+const mockCityData = require('./mock/city.json')
 module.exports = {
   baseUrl: '/',
   outputDir: 'dist', // 打包的目录
@@ -16,9 +17,13 @@ module.exports = {
     hotOnly: false,
     proxy: null, // 设置代理
     before(app) {
-      app.get('/api/index', (req, res) => {
+      app
+        .get('/api/index', (req, res) => {
         res.json(mockIndexData)
       })
+        .get('/api/city', (req, res) => {
+          res.json(mockCityData)
+        })
     }
   },
   chainWebpack: config => {
