@@ -91,12 +91,11 @@
         </div>
       </div>
     </div>
-    
-  
 </template>
 
 <script>
 import BScroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
@@ -123,8 +122,10 @@ export default {
       this.letter = e.target.innerText
     },
     handleCityClick (city) {
-      this.$store.commit('changeCity', city)
-    }
+      // this.$store.commit('changeCity', city)
+      this.changeCity(city)
+    },
+    ...mapMutations(['changeCity'])
   },
   watch: {
     letter () {
