@@ -5,10 +5,10 @@
       猜你喜欢
     </div>
     <ul class="like-list">
-      <li class="like-item">
-        <img class="like-img" src="http://img1.qunarzz.com/sight/p0/1811/d4/d4a663613604238ea3.img.jpg_200x200_b412a8a2.jpg" alt="">
+      <router-link tag='li' :to="'/detail/'+item.id" class="like-item" v-for='item of list' :key='item.id'>
+        <img class="like-img" :src="item.imgUrl" alt="">
         <div class="like-info">
-          <div class="like-title">长隆野生动物世界</div>
+          <div class="like-title">{{item.title}}</div>
           <div class="like-comment">
             <span class="like-star">☆☆☆☆☆</span>
             <span class="comment-num">85400条评论</span>
@@ -19,59 +19,17 @@
             <span class="like-address">广州长隆</span>
           </div>
         </div>
-      </li>
-      <li class="like-item">
-        <img class="like-img" src="http://img1.qunarzz.com/sight/p0/1811/d4/d4a663613604238ea3.img.jpg_200x200_b412a8a2.jpg" alt="">
-        <div class="like-info">
-          <div class="like-title">长隆野生动物世界</div>
-          <div class="like-comment">
-            <span class="like-star">☆☆☆☆☆</span>
-            <span class="comment-num">85400条评论</span>
-          </div>
-          <div class="like-price">
-            ￥
-            <span class="price">209.5</span>起
-            <span class="like-address">广州长隆</span>
-          </div>
-        </div>
-      </li>
-      <li class="like-item">
-        <img class="like-img" src="http://img1.qunarzz.com/sight/p0/1811/d4/d4a663613604238ea3.img.jpg_200x200_b412a8a2.jpg" alt="">
-        <div class="like-info">
-          <div class="like-title">长隆野生动物世界</div>
-          <div class="like-comment">
-            <span class="like-star">☆☆☆☆☆</span>
-            <span class="comment-num">85400条评论</span>
-          </div>
-          <div class="like-price">
-            ￥
-            <span class="price">209.5</span>起
-            <span class="like-address">广州长隆</span>
-          </div>
-        </div>
-      </li>
-      <li class="like-item">
-        <img class="like-img" src="http://img1.qunarzz.com/sight/p0/1811/d4/d4a663613604238ea3.img.jpg_200x200_b412a8a2.jpg" alt="">
-        <div class="like-info">
-          <div class="like-title">长隆野生动物世界</div>
-          <div class="like-comment">
-            <span class="like-star">☆☆☆☆☆</span>
-            <span class="comment-num">85400条评论</span>
-          </div>
-          <div class="like-price">
-            ￥
-            <span class="price">209.5</span>起
-            <span class="like-address">广州长隆</span>
-          </div>
-        </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeLike'
+  name: 'HomeLike',
+  props: {
+    list: Array
+  }
 }
 </script>
 

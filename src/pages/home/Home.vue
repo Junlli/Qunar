@@ -3,7 +3,7 @@
     <home-header></home-header>
     <home-swiper :list='swiperList'></home-swiper>
     <home-icons :list='iconList'></home-icons>
-    <home-like></home-like>
+    <home-like :list='recommendList'></home-like>
     <home-weekend :list='weekendList'></home-weekend>
   </div> 
 </template>
@@ -28,7 +28,8 @@ export default {
     return {
       swiperList: [],
       iconList: [],
-      weekendList: []
+      weekendList: [],
+      recommendList: []
     }
   },
   methods: {
@@ -43,6 +44,7 @@ export default {
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.weekendList = data.weekendList
+        this.recommendList = data.recommendList
       }
     }
   },

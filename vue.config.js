@@ -4,6 +4,7 @@ function resolve (dir) {
 }
 const mockIndexData = require('./mock/index.json')
 const mockCityData = require('./mock/city.json')
+const mockDetailData = require('./mock/detail.json')
 module.exports = {
   baseUrl: '/',
   outputDir: 'dist', // 打包的目录
@@ -23,6 +24,9 @@ module.exports = {
       })
         .get('/api/city', (req, res) => {
           res.json(mockCityData)
+        })
+        .get('/api/detail', (req, res) => {
+          res.json(mockDetailData)
         })
     }
   },
