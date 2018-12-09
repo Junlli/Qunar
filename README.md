@@ -5,7 +5,7 @@
 
 使用了swiper轮播插件
 
-![1544348532124](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1544348532124.png)
+![1544348532124](F:\qunar\src\assets\img\%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1544348532124.png)
 
 
 
@@ -15,10 +15,10 @@
 
 使用vuex共享数据
 
-![1544348553544](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1544348553544.png)
+![1544348553544](F:\qunar\src\assets\img\%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1544348553544.png)
 
 
 
 详情页面
 
-![1544348592514](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1544348592514.png)
+![1544348592514](F:\qunar\src\assets\img\%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1544348592514.png)
